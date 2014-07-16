@@ -22,6 +22,7 @@ limitations under the License.
 """
 import re
 import os
+import goose.resources as res
 from urlparse import urlparse, urljoin
 from goose.utils import FileHelper
 from goose.images.image import Image
@@ -419,9 +420,9 @@ class UpgradedImageIExtractor(ImageExtractor):
 
     def load_customesite_mapping(self):
         # TODO
-        path = os.path.join('images', 'known-image-css.txt')
-        data_file = FileHelper.loadResourceFile(path)
-        lines = data_file.splitlines()
-        for line in lines:
+        #path = os.path.join('images', 'known-image-css.txt')
+        #data_file = FileHelper.loadResourceFile(path)
+        #lines = data_file.splitlines()
+        for line in res.known_image_css:
             domain, css = line.split('^')
             self.custom_site_mapping.update({domain: css})
