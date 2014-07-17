@@ -215,6 +215,13 @@ Known issues
     >>> a.cleaned_text
     u'CAIRO \u2014 For a moment, at least, American and European diplomats trying to defuse the volatile standoff in Egypt thought they had a breakthrough.\n\nAs t'
 
+
+Features for pyinstaller using
+------------
+
+- change all stopwords to resources.py
+
+
 TODO
 ----
 
