@@ -20,10 +20,11 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 """
-import os
+#import os
 import re
 import string
-from goose.utils import FileHelper
+import goose.resources as res
+#from goose.utils import FileHelper
 from goose.utils.encoding import smart_unicode
 from goose.utils.encoding import smart_str
 from goose.utils.encoding import DjangoUnicodeDecodeError
@@ -94,8 +95,9 @@ class StopWords(object):
         # TODO replace 'x' with class
         # to generate dynamic path for file to load
         if not language in self._cached_stop_words:
-            path = os.path.join('text', 'stopwords-%s.txt' % language)
-            self._cached_stop_words[language] = set(FileHelper.loadResourceFile(path).splitlines())
+            #path = os.path.join('text', 'stopwords-%s.txt' % language)
+            #self._cached_stop_words[language] = set(FileHelper.loadResourceFile(path).splitlines())
+            self._cached_stop_words[language] = set(res.lang_stopwords[language])
         self.STOP_WORDS = self._cached_stop_words[language]
 
     def remove_punctuation(self, content):
